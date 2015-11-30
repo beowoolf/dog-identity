@@ -49,15 +49,16 @@ if (!$userNotFound && $password === $realPassword) {
 <html>
     <head>
         <meta charset="UTF-8">
+        <title>DogIdentity</title>
         <script type="text/javascript" src="sha512.js"></script>
-    </head>
-    <body>
-        <script lang="javascript">
+        <script type="text/javascript">
             function onSubmit() {
                 document.getElementById('password').value = CryptoJS.SHA512(document.getElementById('password').value);
                 document.getElementById('loginform').submit();
             }
         </script>
+    </head>
+    <body>       
         <form method="POST" id="loginform">
             Logowanie<br>
             Użytkownik: <input type="text" name="username"><br>
