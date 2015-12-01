@@ -1,5 +1,7 @@
-<?php $databaseAddress = 'localhost'; ?>
-<?php $databaseUser = 'wds_di'; ?>
-<?php $databasePass = 'xampp'; ?>
-<?php $databaseDatabase = 'wds_di'; ?>
-<?php $databasePort = 3306; ?>
+<?php
+    $databaseAddress = 'localhost';
+    $databaseUser = 'wds_di';
+    $databasePass = 'xampp';
+    $databaseDatabase = 'wds_di';
+    $databasePort = 3306;
+?>
