@@ -1,7 +1,7 @@
 <?php
-    $databaseAddress = 'localhost';
-    $databaseUser = 'wds_di';
-    $databasePass = 'xampp';
-    $databaseDatabase = 'wds_di';
-    $databasePort = 3306;
-?>
+
+$databaseAddress = 'localhost';
+$databaseUser = 'root';
+$databasePass = '';
+$databaseDatabase = 'wds_di';
+$databasePort = 3306;

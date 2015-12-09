@@ -1,9 +1,9 @@
 <?php
-include('config.php');
+include('config.inc.php');
 
 session_start();
 if (!empty($_SESSION['user'])) {
-    header("Location: index.php");
+    header("Location: panel.php");
     exit();
 }
 
@@ -40,7 +40,7 @@ if ($username === null && $passwordRaw === null) {
 
 if (!$userNotFound && $password === $realPassword) {
     $_SESSION['user'] = $username;
-    header("Location: index.php");
+    header("Location: panel.php");
     exit();
 }
 
@@ -50,6 +50,7 @@ if (!$userNotFound && $password === $realPassword) {
     <head>
         <meta charset="UTF-8">
         <title>DogIdentity</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src="sha512.js"></script>
         <script type="text/javascript">
             function onSubmit() {
@@ -67,8 +68,9 @@ if (!$userNotFound && $password === $realPassword) {
         </form>
         <?php
         if (!$empty) {
-            echo 'Zła nazwa użytkownika lub hasło.';
+            echo 'Zła nazwa użytkownika lub hasło.<br>';
         }
         ?>
+        <a href="index.php">Strona główna</a>
     </body>
 </html>

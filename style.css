@@ -1,0 +1,22 @@
+.data {
+    margin: 0px;
+    padding: 0px;
+}
+
+th {
+    margin: 0px;
+    padding: 0px;
+    border-bottom: black 1px solid;
+}
+
+tr {
+    margin: 0px;
+    padding: 0px;
+}
+
+td {
+    margin: 0px;
+    padding: 0px;
+    border-bottom: black 1px dotted;
+}
+
