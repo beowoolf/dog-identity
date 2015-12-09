@@ -8,7 +8,10 @@ if (!empty($_SESSION['user'])) {
 }
 
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-$passwordRaw = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+$passwordRaw = null;
+if (!empty($_POST['password'])) {
+    $passwordRaw = $_POST['password'];
+}
 
 $password = hash('sha512', $passwordRaw);
 
