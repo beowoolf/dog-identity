@@ -1,5 +1,5 @@
 <?php
-include('config.inc.php');
+include('functions.php');
 
 session_start();
 if (empty($_SESSION['user'])) {
@@ -18,11 +18,7 @@ if (empty($_SESSION['user'])) {
     </head>
     <body>
         <?php
-            $mysql = new mysqli($databaseAddress, $databaseUser, $databasePass, $databaseDatabase, $databasePort);
-            if ($mysql->connect_error) {
-                die();
-            }
-
+            $mysql = dbConnect();
             $stmt = $mysql->prepare("SELECT ID, URODZONY, ZNAKOWANY, POZYCJA, H_ID FROM MIOT");
             $stmt->bind_result($id, $urodzony, $znakowany, $pozycja, $h_id);
             if (!$stmt) {

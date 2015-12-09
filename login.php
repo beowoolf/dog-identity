@@ -1,5 +1,5 @@
 <?php
-include('config.inc.php');
+include('functions.php');
 
 session_start();
 if (!empty($_SESSION['user'])) {
@@ -22,11 +22,7 @@ $userNotFound = false;
 if ($username === null && $passwordRaw === null) {
     $empty = true;
 } else {
-    $mysql = new mysqli($databaseAddress, $databaseUser, $databasePass, $databaseDatabase, $databasePort);
-    if ($mysql->connect_error) {
-        die();
-    }
-
+    $mysql = dbConnect();
     $stmt = $mysql->prepare("SELECT HASLO FROM UZYTKOWNICY WHERE LOGIN=(?)");
     if (!$stmt) {
         die();
