@@ -19,8 +19,10 @@ if (empty($_SESSION['user'])) {
     <body>
         <?php
             $mysql = dbConnect();
-            $stmt = $mysql->prepare("SELECT ID, URODZONY, ZNAKOWANY, POZYCJA, H_ID FROM MIOT");
-            $stmt->bind_result($id, $urodzony, $znakowany, $pozycja, $h_id);
+            $stmt = $mysql->prepare("SELECT miot.ID, miot.URODZONY, miot.ZNAKOWANY, miot.POZYCJA, miot.H_ID, hodowla.nazwa "
+                    . "FROM MIOT "
+                    . "JOIN hodowla ON hodowla.id = miot.h_id");
+            $stmt->bind_result($id, $urodzony, $znakowany, $pozycja, $h_id, $hodowlaNazwa);
             if (!$stmt) {
                 die();
             }
@@ -32,7 +34,7 @@ if (empty($_SESSION['user'])) {
             echo '<th>Data urodzenia</th>';
             echo '<th>Data znakowania</th>';
             echo '<th>Pozycja znakowania</th>';
-            echo '<th>ID hodowcy</th>';
+            echo '<th>ID hodowli</th>';
             echo '</tr>';
             
             while ($stmt->fetch()) {
@@ -41,7 +43,7 @@ if (empty($_SESSION['user'])) {
                 echo "<td>" . $urodzony . "</td>";
                 echo "<td>" . $znakowany . "</td>";
                 echo "<td>" . $pozycja . "</td>";
-                echo "<td>" . $h_id . "</td>";
+                echo '<td>' . foreignKeyLink('hodowla', $id, $hodowlaNazwa) . '</td>';
                 echo "</tr>\n";
             }
             echo "</table>\n";
