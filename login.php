@@ -59,11 +59,13 @@ if (!$userNotFound && $password === $realPassword) {
         </script>
     </head>
     <body>       
-        <form method="POST" id="loginform">
-            Logowanie<br>
-            Użytkownik: <input type="text" name="username"><br>
-            Hasło: <input type="password" id="password" name="password"><br>
-            <input type="button" value="Zaloguj" onclick="onSubmit()">
+        <form method="POST" id="loginform">           
+            <fieldset
+                <legend>Logowanie</legend><br>
+                <label>Użytkownik:</label> <input type="text" name="username"><br>
+                <label>Hasło:</label> <input type="password" id="password" name="password"><br>
+                <input type="button" value="Zaloguj" onclick="onSubmit()">
+            </fieldset>
         </form>
         <?php
         if (!$empty) {

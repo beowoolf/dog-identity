@@ -19,15 +19,16 @@ if (empty($_SESSION['user'])) {
     <body>
         <?php
             $mysql = dbConnect();
-            $stmt = $mysql->prepare("SELECT miot.ID, miot.URODZONY, miot.ZNAKOWANY, miot.POZYCJA, miot.H_ID, hodowla.nazwa "
+            $stmt = $mysql->prepare("SELECT MIOT.ID, MIOT.URODZONY, MIOT.ZNAKOWANY, MIOT.POZYCJA, MIOT.H_ID, HODOWLA.NAZWA "
                     . "FROM MIOT "
-                    . "JOIN hodowla ON hodowla.id = miot.h_id");
+                    . "JOIN HODOWLA ON HODOWLA.ID = MIOT.H_ID");
             $stmt->bind_result($id, $urodzony, $znakowany, $pozycja, $h_id, $hodowlaNazwa);
             if (!$stmt) {
                 die();
             }
             $stmt->execute();
             echo 'Mioty:<br>';
+            echo '<a href="nowy_miot.php">Dodaj nowy miot</a>';
             echo '<table class="data">';
             echo '<tr class="tableheader">';
             echo '<th>ID</th>';

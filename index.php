@@ -6,12 +6,12 @@ function findLostDog($dogid) {
         $mysql = dbConnect();
         
         $stmt = $mysql->prepare(
-              "SELECT oddzial.nazwa, oddzial.numer, oddzial.adres, oddzial.telefon "
-            . "FROM pies "
-            . "JOIN miot ON pies.m_id = miot.id "
-            . "JOIN hodowla ON miot.h_id = hodowla.id "
-            . "JOIN oddzial ON hodowla.o_id = oddzial.id "
-            . "WHERE pies.oznaczenie=(?)");
+              "SELECT ODDZIAL.NAZWA, ODDZIAL.NUMER, ODDZIAL.ADRES, ODDZIAL.TELEFON "
+            . "FROM PIES "
+            . "JOIN MIOT ON PIES.M_ID = MIOT.ID "
+            . "JOIN HODOWLA ON MIOT.H_ID = HODOWLA.ID "
+            . "JOIN ODDZIAL ON HODOWLA.O_ID = ODDZIAL.ID "
+            . "WHERE PIES.OZNACZENIE=(?)");
         if (!$stmt) {
             die();
         }
@@ -31,9 +31,9 @@ function findLostDog($dogid) {
         $mysql = dbConnect();
         
         $stmt = $mysql->prepare(
-              "SELECT oddzial.nazwa, oddzial.numer, oddzial.adres, oddzial.telefon "
-            . "FROM oddzial "
-            . "WHERE oddzial.tatuaz=(?)");
+              "SELECT ODDZIAL.NAZWA, ODDZIAL.NUMER, ODDZIAL.ADRES, ODDZIAL.TELEFON "
+            . "FROM ODDZIAL "
+            . "WHERE ODDZIAL.TATUAZ=(?)");
         if (!$stmt) {
             die();
         }
@@ -68,9 +68,11 @@ function findLostDog($dogid) {
         $dogid = filter_input(INPUT_GET, 'dogid', FILTER_SANITIZE_STRING);
         ?>
         <form action="index.php">
-            Podaj numer chipa lub tatuażu: <input type="text" name="dogid" value="<?php
+            <fieldset>
+                <label>Podaj numer chipa lub tatuażu:</label> <input type="text" name="dogid" value="<?php
             echo $dogid; ?>"><br>
             <input type="submit" value="Szukaj">
+            </fieldset>
         </form>
         <?php
             if ($dogid !== null && $dogid !== "") {
