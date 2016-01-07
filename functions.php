@@ -122,7 +122,7 @@ function showTablePies($where) {
         echo "<tr>";
         echo "<td>" . primaryKeyLink('pies', $id) . "</td>";
         echo "<td>" . $imie . "</td>";
-        echo "<td>" . (($suka)?('suka'):('pies')) . "</td>";
+        echo "<td>" . getSex($suka) . "</td>";
         echo "<td>" . $oznaczenie . "</td>";
         echo "<td>" . $ojciec . "</td>";
         echo "<td>" . $matka . "</td>";
@@ -132,4 +132,8 @@ function showTablePies($where) {
     }
     echo "</table>\n";
     $stmt->close();
+}
+
+function getSex($suka) {
+    return (($suka)?('suka'):('pies'));
 }
