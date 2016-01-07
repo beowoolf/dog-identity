@@ -9,14 +9,7 @@ if (empty($_SESSION['user'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title></title>
-    </head>
-    <body>
+<?php include "header.php" ?> 
         <?php
             $mysql = dbConnect();
             $stmt = $mysql->prepare("SELECT ODDZIAL.ID, ODDZIAL.NAZWA, ODDZIAL.NUMER, ODDZIAL.TATUAZ, ODDZIAL.ADRES, ODDZIAL.TELEFON "
@@ -27,6 +20,7 @@ if (empty($_SESSION['user'])) {
             }
             $stmt->execute();
             echo 'Oddziały:<br>';
+            echo '<a href="nowy_oddzial.php">Dodaj nowy oddział</a>';
             echo '<table class="data">';
             echo '<tr class="tableheader">';
             echo '<th>ID</th>';
@@ -51,5 +45,4 @@ if (empty($_SESSION['user'])) {
             $stmt->close();
         
         ?>
-    </body>
-</html>
+<?php include "footer.php" ?> 

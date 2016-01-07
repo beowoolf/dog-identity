@@ -54,23 +54,7 @@ function findLostDog($dogid) {
 }
 
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>DogIdentity</title>
-    </head>
-    <body>    
-        
-        <div class="menu">
-            <ul>
-                <li><a href="index.php">Strona główna</a><br /></li>
-                <li><a href="login.php">Logowanie dla pracowników</a><br />
-            </ul>
-        </div>
-        
-        <div class="content">
+<?php include "header.php" ?>  
         DogIdentity - strona publiczna<br />
         Znalazłeś psa? Sprawdź, czy jest w naszej bazie:<br />
         <?php
@@ -98,9 +82,8 @@ function findLostDog($dogid) {
             }
         ?>
         <hr />
-        </div>
         
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="autocomplete.js"></script>
-    </body>
-</html>
+        
+<?php include "footer.php" ?>    

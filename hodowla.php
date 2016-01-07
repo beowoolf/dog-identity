@@ -9,14 +9,7 @@ if (empty($_SESSION['user'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title></title>
-    </head>
-    <body>
+<?php include "header.php" ?> 
         <?php
             $mysql = dbConnect();
             $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_STRING);
@@ -43,5 +36,5 @@ if (empty($_SESSION['user'])) {
             }
             $stmt->close();
         ?>
-    </body>
-</html>
+
+<?php include "footer.php" ?>  

@@ -44,21 +44,8 @@ if (!$userNotFound && $password === $realPassword) {
 }
 
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>DogIdentity</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script type="text/javascript" src="sha512.js"></script>
-        <script type="text/javascript">
-            function onSubmit() {
-                document.getElementById('password').value = CryptoJS.SHA512(document.getElementById('password').value);
-                document.getElementById('loginform').submit();
-            }
-        </script>
-    </head>
-    <body>       
+
+<?php include "header.php" ?> 
         <form method="POST" id="loginform">           
             <fieldset
                 <legend>Logowanie</legend><br>
@@ -73,5 +60,13 @@ if (!$userNotFound && $password === $realPassword) {
         }
         ?>
         <a href="index.php">Strona główna</a>
-    </body>
-</html>
+        
+        <script type="text/javascript" src="sha512.js"></script>
+        <script type="text/javascript">
+            function onSubmit() {
+                document.getElementById('password').value = CryptoJS.SHA512(document.getElementById('password').value);
+                document.getElementById('loginform').submit();
+            }
+        </script>
+        
+<?php include "footer.php" ?> 
