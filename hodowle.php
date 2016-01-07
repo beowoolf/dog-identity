@@ -18,7 +18,7 @@ if (empty($_SESSION['user'])) {
     </head>
     <body>
         <?php
-            showTableMiot("");
-        ?>
+        showTableHodowla("");
+         ?>
     </body>
 </html>

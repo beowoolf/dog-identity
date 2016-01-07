@@ -35,7 +35,9 @@ if (empty($_SESSION['user'])) {
                 echo 'ID: ' . $id . '<br>';
                 echo 'Nazwa: ' . $nazwa . '<br>';
                 echo 'Oddział: ' . $o_id . '<br>';
-                echo 'Hodowca: ' . foreignKeyLink('hodowca', $id, $hodowcaNazwisko) . '<br>';
+                echo 'Hodowca: ' . foreignKeyLink('hodowca', $h_id, $hodowcaNazwisko) . '<br>';
+                echo '<hr>';
+                showTableMiot("WHERE MIOT.H_ID = " . $id);
             } else {
                 echo 'Nie znaleziono hodowli';
             }
