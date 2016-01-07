@@ -32,7 +32,7 @@ if (empty($_SESSION['user'])) {
             
             while ($stmt->fetch()) {
                 echo "<tr>";
-                echo "<td>" . $id . "</td>";
+                echo "<td>" . primaryKeyLink('hodowca', $id) . "</td>";
                 echo "<td>" . $imie . "</td>";
                 echo "<td>" . $nazwisko . "</td>";
                 echo "<td>" . $telefon . "</td>";

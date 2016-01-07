@@ -11,6 +11,10 @@ function dbConnect() {
     return $mysql;
 }
 
+function primaryKeyLink($table, $id) {
+    return '<a href="' . $table . '.php?id=' . $id . '">' . $id . '</a>';
+}
+
 function foreignKeyLink($table, $id, $text) {
     return '<a href="' . $table . '.php?id=' . $id . '">' . $text . ' (' . $id . ')</a>';
 }
@@ -42,11 +46,11 @@ function showTableMiot($where) {
 
     while ($stmt->fetch()) {
         echo "<tr>";
-        echo "<td>" . $id . "</td>";
+        echo "<td>" . primaryKeyLink('miot', $id) . "</td>";
         echo "<td>" . $urodzony . "</td>";
         echo "<td>" . $znakowany . "</td>";
         echo "<td>" . $pozycja . "</td>";
-        echo '<td>' . foreignKeyLink('hodowla', $id, $hodowlaNazwa) . '</td>'; //FIXME $id
+        echo '<td>' . foreignKeyLink('hodowla', $h_id, $hodowlaNazwa) . '</td>';
         echo "</tr>\n";
     }
     echo "</table>\n";
@@ -77,7 +81,7 @@ function showTableHodowla($where) {
 
     while ($stmt->fetch()) {
         echo "<tr>";
-        echo "<td>" . $id . "</td>";
+        echo "<td>" . primaryKeyLink('hodowla', $id) . "</td>";
         echo "<td>" . $nazwa . "</td>";
         echo '<td>' . foreignKeyLink('oddzial', $o_id, $oddzialNazwa) . '</td>';
         echo '<td>' . foreignKeyLink('hodowca', $h_id, $hodowcaNazwisko) . '</td>';
@@ -116,7 +120,7 @@ function showTablePies($where) {
 
     while ($stmt->fetch()) {
         echo "<tr>";
-        echo "<td>" . $id . "</td>";
+        echo "<td>" . primaryKeyLink('pies', $id) . "</td>";
         echo "<td>" . $imie . "</td>";
         echo "<td>" . (($suka)?('suka'):('pies')) . "</td>";
         echo "<td>" . $oznaczenie . "</td>";

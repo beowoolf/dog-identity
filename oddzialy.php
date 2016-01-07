@@ -33,7 +33,7 @@ if (empty($_SESSION['user'])) {
             
             while ($stmt->fetch()) {
                 echo "<tr>";
-                echo "<td>" . $id . "</td>";
+                echo "<td>" . primaryKeyLink('oddzial', $id) . "</td>";
                 echo "<td>" . $nazwa . "</td>";
                 echo "<td>" . $numer . "</td>";
                 echo "<td>" . $tatuaz . "</td>";

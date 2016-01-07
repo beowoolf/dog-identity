@@ -9,14 +9,7 @@ if (empty($_SESSION['user'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title></title>
-    </head>
-    <body>
+<?php include "header.php" ?> 
         <?php
             $mysql = dbConnect();
             $stmt = $mysql->prepare("SELECT RASA.ID, RASA.NAZWA, RASA.FCI_ID, FCI.NAZWA "
@@ -37,7 +30,7 @@ if (empty($_SESSION['user'])) {
             
             while ($stmt->fetch()) {
                 echo "<tr>";
-                echo "<td>" . $id . "</td>";
+                echo "<td>" . primaryKeyLink('rasa', $id) . "</td>";
                 echo "<td>" . $nazwa . "</td>";
                 echo '<td>' . $fciNazwa . '</td>';
                 echo "</tr>\n";
