@@ -9,14 +9,7 @@ if (empty($_SESSION['user'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title></title>
-    </head>
-    <body>
+<?php include "header.php" ?> 
         <?php
             $mysql = dbConnect();
             $stmt = $mysql->prepare("SELECT HODOWLA.ID, HODOWLA.NAZWA, HODOWCA.IMIE, HODOWCA.NAZWISKO, ODDZIAL.NAZWA "
@@ -50,6 +43,5 @@ if (empty($_SESSION['user'])) {
             echo "</table>\n";
             $stmt->close();      
         ?>
-    </body>
-</html>
+<?php include "footer.php" ?> 
 

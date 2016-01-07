@@ -14,14 +14,8 @@ if (empty($_SESSION['user'])) {
 }
 
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>DogIdentity</title>
-    </head>
-    <body>       
+
+<?php include "header.php" ?> 
         Hello DogIdentity WOW<br />
         <?php echo 'Witaj użytkowniku ' . $_SESSION['user']; ?> <br />
         <a href="mioty.php">Mioty</a>
@@ -31,5 +25,4 @@ if (empty($_SESSION['user'])) {
         <form method="POST">
             <input type="submit" name="logout" value="Wyloguj">
         </form>
-    </body>
-</html>
+<?php include "footer.php" ?> 

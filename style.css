@@ -2,33 +2,38 @@ body {
     font-family: Arial, Verdana, sans-serif;
     color: black;
     line-height: 1.5em;
-    background: yellow;
+    background: #99CC66;
 }
 
 .menu, .content {
     box-shadow: 0 0 5px;
-    border: 3px solid orange;
-    background: white;
+    border: 3px solid #336600;
+    background: #CCFF99;
     width: 1000px;
     display: center;
-    padding: 15px;
-    margin: auto;
+    padding: 10px;
+    margin: 5px auto;
     
 }
 .menu {
     font-weight: bold;
-    list-style: none;
 }
 
 .menu ul {
-    text-align: center;
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .menu li {
-	display: inline;
-	white-space: nowrap;
-        margin: auto;
-	font-size: x-large;
+    display: inline;
+    white-space: nowrap;
+    margin: auto;
+}
+
+.menu a {
+    text-decoration: none;
 }
 
 .data {
