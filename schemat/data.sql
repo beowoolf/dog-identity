@@ -36,7 +36,7 @@ INSERT INTO `rasa` (`ID`, `NAZWA`, `FCI_ID`) VALUES
 (9, 'rasa4', 1),
 (10, 'rasa5', 1);
 
-INSERT INTO `pies` (`ID`, `SUKA`, `IMIĘ`, `OZNACZENIE`, `OJCIEC`, `MATKA`, `M_ID`, `R_ID`) VALUES
+INSERT INTO `pies` (`ID`, `SUKA`, `IMIE`, `OZNACZENIE`, `OJCIEC`, `MATKA`, `M_ID`, `R_ID`) VALUES
 (1, 0, 'pies1', '123456789', 'pies ojciec', 'pies matka', 1, 7),
 (2, 0, 'pies2', '123454322', 'pies ojciec', 'pies matka', 1, 7),
 (3, 1, 'pies3', '423432423', 'ojciec2', 'matka2', 2, 8),

@@ -61,18 +61,28 @@ function findLostDog($dogid) {
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>DogIdentity</title>
     </head>
-    <body>       
+    <body>    
+        
+        <div class="menu">
+            <ul>
+                <li><a href="index.php">Strona główna</a><br /></li>
+                <li><a href="login.php">Logowanie dla pracowników</a><br />
+            </ul>
+        </div>
+        
+        <div class="content">
         DogIdentity - strona publiczna<br />
         Znalazłeś psa? Sprawdź, czy jest w naszej bazie:<br />
         <?php
         $dogid = filter_input(INPUT_GET, 'dogid', FILTER_SANITIZE_STRING);
         ?>
-        <form action="index.php">
+        <form action="index.php" id="search">
             <fieldset>
-                <label>Podaj numer chipa lub tatuażu:</label> <input type="text" name="dogid" value="<?php
-            echo $dogid; ?>"><br>
-            <input type="submit" value="Szukaj">
+                <label>Podaj numer chipa lub tatuażu:</label><br/>
+                <input type="text" name="dogid" value="<?php echo $dogid; ?>"  id="searchbox" autocomplete="off">
+                <div id="autocomplete"></div><input type="submit" value="Szukaj">
             </fieldset>
+            
         </form>
         <?php
             if ($dogid !== null && $dogid !== "") {
@@ -88,6 +98,9 @@ function findLostDog($dogid) {
             }
         ?>
         <hr />
-        <a href="login.php">Logowanie dla pracowników</a><br />
+        </div>
+        
+        <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="autocomplete.js"></script>
     </body>
 </html>

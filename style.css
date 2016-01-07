@@ -1,3 +1,36 @@
+body {
+    font-family: Arial, Verdana, sans-serif;
+    color: black;
+    line-height: 1.5em;
+    background: yellow;
+}
+
+.menu, .content {
+    box-shadow: 0 0 5px;
+    border: 3px solid orange;
+    background: white;
+    width: 1000px;
+    display: center;
+    padding: 15px;
+    margin: auto;
+    
+}
+.menu {
+    font-weight: bold;
+    list-style: none;
+}
+
+.menu ul {
+    text-align: center;
+}
+
+.menu li {
+	display: inline;
+	white-space: nowrap;
+        margin: auto;
+	font-size: x-large;
+}
+
 .data {
     margin: 0px;
     padding: 0px;
@@ -20,3 +53,17 @@ td {
     border-bottom: black 1px dotted;
 }
 
+#autocomplete {
+    width:170px;
+    position: absolute; 
+    background-color: #FFFFFF; 
+    text-align: left;
+    border: #edebd5 solid 1px;
+    visibility:hidden;
+}
+
+.suggest:hover {
+    background-color: #0000FF;
+    color: #FFFFFF;
+}
+                                
