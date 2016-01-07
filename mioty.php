@@ -44,7 +44,7 @@ if (empty($_SESSION['user'])) {
                 echo "<td>" . $urodzony . "</td>";
                 echo "<td>" . $znakowany . "</td>";
                 echo "<td>" . $pozycja . "</td>";
-                echo '<td>' . foreignKeyLink('hodowla', $id, $hodowlaNazwa) . '</td>';
+                echo '<td>' . foreignKeyLink('hodowla', $h_id, $hodowlaNazwa) . '</td>';
                 echo "</tr>\n";
             }
             echo "</table>\n";

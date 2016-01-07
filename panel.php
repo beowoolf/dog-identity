@@ -25,6 +25,9 @@ if (empty($_SESSION['user'])) {
         Hello DogIdentity WOW<br />
         <?php echo 'Witaj użytkowniku ' . $_SESSION['user']; ?> <br />
         <a href="mioty.php">Mioty</a>
+        <a href="hodowle.php">Hodowle</a>
+        <a href="hodowcy.php">Hodowcy</a>
+        <a href="oddzialy.php">Oddziały</a>
         <form method="POST">
             <input type="submit" name="logout" value="Wyloguj">
         </form>
