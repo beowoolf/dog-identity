@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
     line-height: 1.5em;
     background: #99CC66;
@@ -71,4 +71,25 @@ td {
     background-color: #0000FF;
     color: #FFFFFF;
 }
+
+.form-style{
+    width: 100%;
+    padding: 20px 12px 10px 20px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+
+.form-style label{
+    display: block;
+    margin: 0px 0px 15px 0px;
+}
+
+.form-style label > span{
+    width: 20%;
+    font-weight: bold;
+    float: left;
+    padding-top: 8px;
+    padding-right: 5px;
+}
+
+
                                 

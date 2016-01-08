@@ -60,14 +60,14 @@ function findLostDog($dogid) {
         <?php
         $dogid = filter_input(INPUT_GET, 'dogid', FILTER_SANITIZE_STRING);
         ?>
-        <form action="index.php" id="search">
-            <fieldset>
-                <label>Podaj numer chipa lub tatuażu:</label><br/>
-                <input type="text" name="dogid" value="<?php echo $dogid; ?>"  id="searchbox" autocomplete="off">
-                <div id="autocomplete"></div><input type="submit" value="Szukaj">
-            </fieldset>
-            
-        </form>
+        <div class="form-style">
+            <form action="index.php" id="search">            
+                <label for="dogid"><span>Podaj numer chipa lub tatuażu:</span>
+                    <input type="text" name="dogid" value="<?php echo $dogid; ?>"  id="searchbox" autocomplete="off">
+                    <div id="autocomplete"></div><input type="submit" value="Szukaj">
+                </label>                                        
+            </form>
+        </div>
         <?php
             if ($dogid !== null && $dogid !== "") {
                 $id = findLostDog($dogid);

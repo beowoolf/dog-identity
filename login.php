@@ -46,21 +46,19 @@ if (!$userNotFound && $password === $realPassword) {
 ?>
 
 <?php include "header.php" ?> 
-        <form method="POST" id="loginform">           
-            <fieldset
-                <legend>Logowanie</legend><br>
-                <label>Użytkownik:</label> <input type="text" name="username"><br>
-                <label>Hasło:</label> <input type="password" id="password" name="password"><br>
-                <input type="button" value="Zaloguj" onclick="onSubmit()">
-            </fieldset>
-        </form>
+        <div class="form-style">
+            <form method="POST" id="loginform">                                                                           
+                <label for="name"><span>Użytkownik:</span><input type="text" name="username"></label>                                                                                                                            
+                <label for="password"><span>Hasło:</span><input type="password" id="password" name="password"></label>                                       
+                <label><span>&nbsp;</span><input type="button" value="Zaloguj" onclick="onSubmit()"></label>                                                                                                       
+            </form>
+        </div>
         <?php
         if (!$empty) {
             echo 'Zła nazwa użytkownika lub hasło.<br>';
         }
         ?>
-        <a href="index.php">Strona główna</a>
-        
+              
         <script type="text/javascript" src="sha512.js"></script>
         <script type="text/javascript">
             function onSubmit() {

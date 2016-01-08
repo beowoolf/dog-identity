@@ -20,21 +20,22 @@ if (empty($_SESSION['user'])) {
             }
             $stmt->execute();
         ?>
-        Nowy miot:<br>
-        <form action="wstawianie_nowego_miotu.php" method="POST">
-            <fieldset>
-                <label>Data urodzenia:</label> <input type="text" name="birthDate"><br>
-                <label>Data znakowania:</label> <input type="text" name="markupDate"><br>
-                <label>Pozycja znakowania</label> <input type ="text" name="markupPosition"></br>
-                <label>Hodowla:</label> 
-                <select name="breeding"> 
-                    <?php while ($stmt->fetch()) {
-                        echo "<option value=\"$id\">$nazwa</option>";
-                    } 
-                    $stmt->close(); ?>
-                </select> <br>
-                <input type="submit" value="Dodaj">
-            </fieldset>
-        </form>
+        <H1>Nowy miot:</H1><br>
+        <div class="form-style">
+            <form action="wstawianie_nowego_miotu.php" method="POST">                  
+                <label for="birthDate"><span>Data urodzenia:</span><input type="text" name="birthDate"></label>                
+                <label for="markupDate"><span>Data znakowania:</span><input type="text" name="markupDate"></label>                
+                <label for="markupPosition"><span>Pozycja znakowania:</span><input type="text" name="markupPosition"></label>              
+                <label for="breeding"><span>Hodowla:</span> 
+                    <select name="breeding"> 
+                        <?php while ($stmt->fetch()) {
+                            echo "<option value=\"$id\">$nazwa</option>";
+                        } 
+                        $stmt->close(); ?>
+                    </select>
+                </label>
+                <label><span>&nbsp;</span><input type="submit" value="Dodaj"></label>                                   
+            </form>
+        </div>
 <?php include "footer.php" ?> 
 
