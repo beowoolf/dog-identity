@@ -29,5 +29,6 @@ if (empty($_SESSION['user'])) {
             $mysql->close();          
         ?> 
         <p> Miot został dodany </p>
+        <a href="mioty.php">Powrót do listy miotów</a>
 <?php include "footer.php" ?> 
 
