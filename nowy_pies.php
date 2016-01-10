@@ -19,6 +19,14 @@ if (empty($_SESSION['user'])) {
                 die();
             }
             $stmt->execute();
+            $mysql2 = dbConnect();
+            $brood_stmt = $mysql2->prepare("SELECT MIOT.ID, MIOT.NAZWA "
+                    . "FROM MIOT");
+            $brood_stmt->bind_result($brood_id, $brood_name);
+            if (!$brood_stmt) {
+                die();
+            }
+            $brood_stmt->execute();
         ?>
         <H1>Nowy pies:</H1><br>
         <div class="form-style">
@@ -26,12 +34,23 @@ if (empty($_SESSION['user'])) {
                 <label for="name"><span>Imię:</span><input type="text" name="name"></label>                
                 <label for="mother"><span>Matka:</span><input type="text" name="mother"></label> 
                 <label for="father"><span>Ojciec:</span><input type="text" name="father"></label>
+                <label for="markup"><span>Oznaczenie:</span><input type="text" name="markup"></label>
                 <label for="breed"><span>Rasa:</span>
                         <select name="breed"> 
                         <?php while ($stmt->fetch()) {
                             echo "<option value=\"$id\">$nazwa</option>";
                         } 
-                        $stmt->close(); ?>
+                        $stmt->close();
+                        $mysql->close() ?>
+                    </select>
+                </label>
+                <label for="brood"><span>Miot:</span>
+                    <select name="brood">                       
+                        <?php while ($stmt->fetch()) {
+                            echo "<option value=\"$brood_id\">$brood_name</option>";
+                        } 
+                        $brood_stmt->close();
+                        $mysql2->close() ?>
                     </select>
                 </label>
                 <label for="gender"><span>Płeć:</span>

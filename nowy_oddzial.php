@@ -16,7 +16,7 @@ if (empty($_SESSION['user'])) {
             <label for="name"><span>Nazwa:</span><input type="text" name="name"></label>                
             <label for="number"><span>Numer:</span><input type="text" name="number"></label> 
             <label for="tatoo"><span>Tautuaż:</span><input type="text" name="tatoo"></label> 
-            <label for="adress"><span>Adres:</span><input type="text" name="adress"></label>              
+            <label for="address"><span>Adres:</span><input type="text" name="address"></label>              
             <label for="phone_number"><span>Telefon:</span><input type="text" name="phone_number"></label>                      
             <label><span>&nbsp;</span><input type="submit" value="Dodaj"></label>                                   
         </form>
