@@ -30,5 +30,10 @@ if (empty($_SESSION['user'])) {
         ?> 
         <p> Miot został dodany </p>
         <a href="mioty.php">Powrót do listy miotów</a>
+        <script>
+            setTimeout(function () {
+                window.location.href= 'mioty.php'; // the redirect goes here
+            },5000); // 5 seconds
+        </script>
 <?php include "footer.php" ?> 
 
