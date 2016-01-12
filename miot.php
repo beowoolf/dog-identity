@@ -30,6 +30,7 @@ if (empty($_SESSION['user'])) {
                 echo 'Znakowany: ' . $znakowany . '<br>';
                 echo 'Pozycja: ' . $pozycja . '<br>';
                 echo 'Hodowla: ' . foreignKeyLink('hodowla', $h_id, $hodowlaNazwa) . '<br>';
+                echo "<a href=\"nowy_miot.php?id=$id\">edytuj<a>";
                 echo '<hr>';
                 showTablePies("WHERE PIES.M_ID = " . $id);
             } else {

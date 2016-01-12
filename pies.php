@@ -35,7 +35,8 @@ if (empty($_SESSION['user'])) {
                 echo 'Ojciec: ' . $ojciec . '<br>';
                 echo 'Matka: ' . $matka . '<br>';
                 echo 'ID miotu / data urodzenia:' . foreignKeyLink('miot', $m_id, $urodzony) . '<br>';
-                echo 'Rasa: ' .foreignKeyLink('rasa', $r_id, $rasa);
+                echo 'Rasa: ' .foreignKeyLink('rasa', $r_id, $rasa) . '<br>';
+                echo "<a href=\"nowy_pies.php?id=$id\">edytuj</a>";
             } else {
                 echo 'Nie znaleziono psa';
             }

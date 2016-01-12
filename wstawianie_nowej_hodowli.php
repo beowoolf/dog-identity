@@ -11,23 +11,34 @@ if (empty($_SESSION['user'])) {
 
 ?>
 
-<?php include "header.php" ?> 
-        <?php           
-            $mysql = dbConnect();
-            $name = $_POST["name"];
-            $breeder = $_POST["breeder"];
-            $division = $_POST["division"];         
-            $stmt = $mysql->prepare("INSERT INTO HODOWLA (NAZWA, H_ID, O_ID) "
-                        . "VALUES (?, ?, ?)");
-            $stmt->bind_param("sii", $name, $breeder, $division);
-            if (!$stmt) {
-                die();
-            }
-            $stmt->execute();
-            $stmt->close();
-            $mysql->close();          
-        ?> 
-        <p> Hodowla została dodana </p>
+<?php include "header.php";                  
+    $mysql = dbConnect();
+    $name = $_POST["name"];
+    $breeder = $_POST["breeder"];
+    $division = $_POST["division"];  
+    if (isset($_POST["id"])) {
+        $id = $_POST["id"];
+        $stmt = $mysql->prepare("UPDATE HODOWLA "
+                . "SET NAZWA = ?, H_ID = ?, O_ID = ? "
+                . "WHERE ID = ?");
+        $stmt->bind_param("sssi", $name, $breeder, $division, $id);
+    } else {
+        $stmt = $mysql->prepare("INSERT INTO HODOWLA (NAZWA, H_ID, O_ID) "
+                    . "VALUES (?, ?, ?)");
+        $stmt->bind_param("sii", $name, $breeder, $division);
+    }
+    if (!$stmt) {
+        die();
+    }
+    $stmt->execute();
+    $stmt->close();
+    $mysql->close();  
+    if (isset($_POST["id"])) {
+        echo '<p> Zmodyfikowano dane hodowli </p>';
+    } else {
+        echo '<p> Hodowla została dodana </p>';
+    }
+?>         
         <a href="mioty.php">Powrót do listy hodowli</a>
         <script>
             setTimeout(function () {
