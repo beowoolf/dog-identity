@@ -42,6 +42,8 @@ if (empty($_SESSION['user'])) {
             }
             $stmt->execute();
             $stmt->fetch();
+            $stmt->close();
+            $mysql3->close();
 
         } else {
             echo "<H1>Nowa hodowla:</H1><br>";
@@ -53,7 +55,7 @@ if (empty($_SESSION['user'])) {
         ?>       
         <div class="form-style">
             <form action="wstawianie_nowej_hodowli.php" method="POST">                  
-                <label for="name"><span>Nazwa:</span><input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>"></label>                
+                <label for="name"><span>Nazwa:</span><input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>"></label><br />
                 <label for="breeder"><span>Hodowca:</span>
                     <select name="breeder">
                         <?php while ($breeder_stmt->fetch()) {
@@ -65,7 +67,7 @@ if (empty($_SESSION['user'])) {
                         } 
                         $breeder_stmt->close(); ?>
                     </select>
-                </label> 
+                </label><br />
                 <label for="division"><span>Oddział:</span> 
                     <select name="division">
                         <?php while ($division_stmt->fetch()) {
@@ -76,12 +78,10 @@ if (empty($_SESSION['user'])) {
                             echo ">$division_name</option>";
                         } 
                         $division_stmt->close();
-                        $stmt->close();
                         $mysql->close();
-                        $mysql->close();
-                        $mysql3->close(); ?>
+                        $mysql->close(); ?>
                     </select>
-                </label>
+                </label><br />
                 <?php
                     if (isset($_GET["id"])) {
                         echo "<input type=\"hidden\" name=\"id\" value=\"$id\" />";

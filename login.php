@@ -48,8 +48,8 @@ if (!$userNotFound && $password === $realPassword) {
 <?php include "header.php" ?> 
         <div class="form-style">
             <form method="POST" id="loginform">                                                                           
-                <label for="name"><span>Użytkownik:</span><input type="text" name="username"></label>                                                                                                                            
-                <label for="password"><span>Hasło:</span><input type="password" id="password" name="password"></label>                                       
+                <label for="name"><span>Użytkownik:</span><input type="text" name="username"></label><br />                                                                                                                          
+                <label for="password"><span>Hasło:</span><input type="password" id="password" name="password"></label><br />
                 <label><span>&nbsp;</span><input type="button" value="Zaloguj" onclick="onSubmit()"></label>                                                                                                       
             </form>
         </div>

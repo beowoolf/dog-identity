@@ -54,10 +54,10 @@ if (empty($_SESSION['user'])) {
 ?>       
         <div class="form-style">
             <form action="wstawianie_nowego_psa.php" method="POST">                  
-                <label for="name"><span>Imię:</span><input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>"></label>                
-                <label for="mother"><span>Matka:</span><input type="text" name="mother" value="<?php echo htmlspecialchars($mother); ?>"></label> 
-                <label for="father"><span>Ojciec:</span><input type="text" name="father" value="<?php echo htmlspecialchars($father); ?>"></label>
-                <label for="markup"><span>Oznaczenie:</span><input type="text" name="markup" value="<?php echo htmlspecialchars($markup); ?>"></label>
+                <label for="name"><span>Imię:</span><input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>"></label><br />
+                <label for="mother"><span>Matka:</span><input type="text" name="mother" value="<?php echo htmlspecialchars($mother); ?>"></label><br />
+                <label for="father"><span>Ojciec:</span><input type="text" name="father" value="<?php echo htmlspecialchars($father); ?>"></label><br />
+                <label for="markup"><span>Oznaczenie:</span><input type="text" name="markup" value="<?php echo htmlspecialchars($markup); ?>"></label><br />
                 <label for="breed"><span>Rasa:</span>
                         <select name="breed"> 
                         <?php while ($breed_stmt->fetch()) {                            
@@ -70,7 +70,7 @@ if (empty($_SESSION['user'])) {
                         $breed_stmt->close();
                         $mysql->close() ?>
                     </select>
-                </label>
+                </label><br />
                 <label for="brood"><span>Miot:</span>
                     <select name="brood">                       
                         <?php while ($brood_stmt->fetch()) {                           
@@ -83,13 +83,13 @@ if (empty($_SESSION['user'])) {
                         $brood_stmt->close();
                         $mysql2->close() ?>
                     </select>
-                </label>
+                </label><br />
                 <label for="gender"><span>Płeć:</span>
                     <select name="gender">                       
                         <option value="0">Pies</option>
                         <option value="1">Suka</option>                       
                     </select>
-                </label>
+                </label><br />
                 <?php
                     if (isset($_GET["id"])) {
                         echo "<input type=\"hidden\" name=\"id\" value=\"$id\" />";

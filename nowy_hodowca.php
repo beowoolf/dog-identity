@@ -37,10 +37,10 @@ if (empty($_SESSION['user'])) {
            
     <div class="form-style">
         <form action="wstawianie_nowego_hodowcy.php" method="POST"> 
-            <label for="name"><span>Imię:</span><input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>"></label>                
-            <label for="surname"><span>Nazwisko:</span><input type="text" name="surname" value="<?php echo htmlspecialchars($surname); ?>"></label>                 
-            <label for="address"><span>Adres:</span><input type="text" name="address" value="<?php echo htmlspecialchars($address); ?>"></label>              
-            <label for="phone_number"><span>Telefon:</span><input type="text" name="phone_number" value="<?php echo htmlspecialchars($phone_number); ?>"></label>
+            <label for="name"><span>Imię:</span><input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>"></label><br />
+            <label for="surname"><span>Nazwisko:</span><input type="text" name="surname" value="<?php echo htmlspecialchars($surname); ?>"></label><br />
+            <label for="address"><span>Adres:</span><input type="text" name="address" value="<?php echo htmlspecialchars($address); ?>"></label><br />
+            <label for="phone_number"><span>Telefon:</span><input type="text" name="phone_number" value="<?php echo htmlspecialchars($phone_number); ?>"></label><br />
             <?php
                 if (isset($_GET["id"])) {
                     echo "<input type=\"hidden\" name=\"id\" value=\"$id\" />";

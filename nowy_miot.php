@@ -61,9 +61,9 @@ if (empty($_SESSION['user'])) {
         
         <div class="form-style">
             <form action="wstawianie_nowego_miotu.php" method="POST">                  
-                <label for="birthDate"><span>Data urodzenia:</span><input type="text" name="birthDate" id="birthDate" value="<?php echo htmlspecialchars($birthDate); ?>"></label>                
-                <label for="markupDate"><span>Data znakowania:</span><input type="text" name="markupDate" id="markupDate" value="<?php echo htmlspecialchars($markupDate); ?>"></label>                
-                <label for="markupPosition"><span>Pozycja znakowania:</span><input type="text" name="markupPosition" value="<?php echo htmlspecialchars($markupPosition); ?>"></label>              
+                <label for="birthDate"><span>Data urodzenia:</span><input type="text" name="birthDate" id="birthDate" value="<?php echo htmlspecialchars($birthDate); ?>"></label><br />
+                <label for="markupDate"><span>Data znakowania:</span><input type="text" name="markupDate" id="markupDate" value="<?php echo htmlspecialchars($markupDate); ?>"></label><br />
+                <label for="markupPosition"><span>Pozycja znakowania:</span><input type="text" name="markupPosition" value="<?php echo htmlspecialchars($markupPosition); ?>"></label><br />
                 <label for="breeding"><span>Hodowla:</span> 
                     <select name="breeding"> 
                         <?php while ($stmt->fetch()) {
@@ -75,7 +75,7 @@ if (empty($_SESSION['user'])) {
                         } 
                         $stmt->close(); ?>
                     </select>
-                </label>
+                </label><br />
                 <?php
                     if (isset($_GET["id"])) {
                         echo "<input type=\"hidden\" name=\"id\" value=\"$id\" />";

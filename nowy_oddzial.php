@@ -36,11 +36,11 @@ if (empty($_SESSION['user'])) {
 ?>      
     <div class="form-style">
         <form action="wstawianie_nowego_oddzialu.php" method="POST">                  
-            <label for="name"><span>Nazwa:</span><input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>"></label>                
-            <label for="number"><span>Numer:</span><input type="text" name="number" value="<?php echo htmlspecialchars($numer); ?>"></label> 
-            <label for="tatoo"><span>Tautuaż:</span><input type="text" name="tatoo" value="<?php echo htmlspecialchars($tatoo); ?>"></label> 
-            <label for="address"><span>Adres:</span><input type="text" name="address" value="<?php echo htmlspecialchars($address); ?>"></label>              
-            <label for="phone_number"><span>Telefon:</span><input type="text" name="phone_number" value="<?php echo htmlspecialchars($phone_number); ?>"></label>                      
+            <label for="name"><span>Nazwa:</span><input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>"></label><br />
+            <label for="number"><span>Numer:</span><input type="text" name="number" value="<?php echo htmlspecialchars($numer); ?>"></label><br />
+            <label for="tatoo"><span>Tautuaż:</span><input type="text" name="tatoo" value="<?php echo htmlspecialchars($tatoo); ?>"></label><br />
+            <label for="address"><span>Adres:</span><input type="text" name="address" value="<?php echo htmlspecialchars($address); ?>"></label><br />
+            <label for="phone_number"><span>Telefon:</span><input type="text" name="phone_number" value="<?php echo htmlspecialchars($phone_number); ?>"></label><br />
             <?php
                 if (isset($_GET["id"])) {
                     echo "<input type=\"hidden\" name=\"id\" value=\"$id\" />";
