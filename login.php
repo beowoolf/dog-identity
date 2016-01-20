@@ -9,8 +9,8 @@ if (!empty($_SESSION['user'])) {
 
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $passwordRaw = null;
-if (!empty($_POST['password'])) {
-    $passwordRaw = $_POST['password'];
+if (!empty($_POST['passwordhashed'])) {
+    $passwordRaw = $_POST['passwordhashed'];
 }
 
 $password = hash('sha512', $passwordRaw);
@@ -36,12 +36,12 @@ if ($username === null && $passwordRaw === null) {
     $stmt->close();
 }
 
-
 if (!$userNotFound && $password === $realPassword) {
     $_SESSION['user'] = $username;
     header("Location: panel.php");
-    exit();
+    exit();    
 }
+
 
 ?>
 
@@ -50,7 +50,7 @@ if (!$userNotFound && $password === $realPassword) {
             <form method="POST" id="loginform">                                                                           
                 <label for="name"><span>Użytkownik:</span><input type="text" name="username"></label><br />                                                                                                                          
                 <label for="password"><span>Hasło:</span><input type="password" id="password" name="password"></label><br />
-                <label><span>&nbsp;</span><input type="button" value="Zaloguj" onclick="onSubmit()"></label>                                                                                                       
+                <label><span>&nbsp;</span><input id="submitbutton" type="button" value="Zaloguj" ></label>                                                                                                       
             </form>
         </div>
         <?php
@@ -60,11 +60,6 @@ if (!$userNotFound && $password === $realPassword) {
         ?>
               
         <script type="text/javascript" src="sha512.js"></script>
-        <script type="text/javascript">
-            function onSubmit() {
-                document.getElementById('password').value = CryptoJS.SHA512(document.getElementById('password').value);
-                document.getElementById('loginform').submit();
-            }
-        </script>
+        <script type="text/javascript" src="login.js"></script>
         
 <?php include "footer.php" ?> 
