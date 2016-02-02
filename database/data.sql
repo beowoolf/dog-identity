@@ -23,18 +23,18 @@ INSERT INTO `miot` (`ID`, `URODZONY`, `ZNAKOWANY`, `POZYCJA`, `H_ID`) VALUES
 (2, '2015-09-01', '2015-09-20', 'lewa strona szyi', 2);
 
 INSERT INTO `fci` (`ID`, `NAZWA`) VALUES
-(1, 'fci1'),
-(2, 'fci2'),
-(3, 'fci3'),
-(4, 'fci4'),
-(5, 'fci5');
+(101, 'fci1'),
+(201, 'fci2'),
+(301, 'fci3'),
+(401, 'fci4'),
+(501, 'fci5');
 
 INSERT INTO `rasa` (`ID`, `NAZWA`, `FCI_ID`) VALUES
-(6, 'rasa1', 1),
-(7, 'rasa2', 3),
-(8, 'rasa3', 5),
-(9, 'rasa4', 1),
-(10, 'rasa5', 1);
+(6, 'rasa1', 101),
+(7, 'rasa2', 301),
+(8, 'rasa3', 501),
+(9, 'rasa4', 101),
+(10, 'rasa5', 101);
 
 INSERT INTO `pies` (`ID`, `SUKA`, `IMIE`, `OZNACZENIE`, `OJCIEC`, `MATKA`, `M_ID`, `R_ID`) VALUES
 (1, 0, 'pies1', '123456789', 'pies ojciec', 'pies matka', 1, 7),
