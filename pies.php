@@ -36,11 +36,11 @@ if (empty($_SESSION['user'])) {
                 echo 'Matka: ' . $matka . '<br>';
                 echo 'ID miotu / data urodzenia:' . foreignKeyLink('miot', $m_id, $urodzony) . '<br>';
                 echo 'Rasa: ' .foreignKeyLink('rasa', $r_id, $rasa) . '<br>';
-                echo "<a href=\"nowy_pies.php?id=$id\">edytuj</a>";
+                echo "<a href=\"nowy_pies.php?id=$id\">edytuj</a> / ";
+                echo "<a href=\"usun_pies.php?id=$id\">usuń</a>";
             } else {
                 echo 'Nie znaleziono psa';
             }
             $stmt->close();
         ?>
-    </body>
-</html>
+<?php include "footer.php" ?> 
