@@ -23,18 +23,23 @@ INSERT INTO `miot` (`ID`, `URODZONY`, `ZNAKOWANY`, `POZYCJA`, `H_ID`) VALUES
 (2, '2015-09-01', '2015-09-20', 'lewa strona szyi', 2);
 
 INSERT INTO `fci` (`ID`, `NAZWA`) VALUES
-(101, 'fci1'),
-(201, 'fci2'),
-(301, 'fci3'),
-(401, 'fci4'),
-(501, 'fci5');
+(1, 'Owczarki i inne psy pasterskie z wyłączeniem szwajcarskich psów do bydła'),
+(2, 'Pinczery i sznaucery, molosy, szwajcarskie psy górskie i do bydła, pozostałe rasy'),
+(3, 'Teriery'),
+(4, 'Jamniki'),
+(5, 'Szpice i psy w typie pierwotnym'),
+(6, 'Psy gończe i rasy pokrewne'),
+(7, 'Wyżły (psy wystawiające zwierzynę)'),
+(8, 'Aportery, płochacze i psy dowodne'),
+(9, 'Psy ozdobne i do towarzystwa'),
+(10, 'Charty');
 
 INSERT INTO `rasa` (`ID`, `NAZWA`, `FCI_ID`) VALUES
-(6, 'rasa1', 101),
-(7, 'rasa2', 301),
-(8, 'rasa3', 501),
-(9, 'rasa4', 101),
-(10, 'rasa5', 101);
+(6, 'rasa1', 1),
+(7, 'rasa2', 3),
+(8, 'rasa3', 5),
+(9, 'rasa4', 10),
+(10, 'rasa5', 10);
 
 INSERT INTO `pies` (`ID`, `SUKA`, `IMIE`, `OZNACZENIE`, `OJCIEC`, `MATKA`, `M_ID`, `R_ID`) VALUES
 (1, 0, 'pies1', '123456789', 'pies ojciec', 'pies matka', 1, 7),
