@@ -66,8 +66,8 @@ function findLostDog($dogid) {
         
         <div class="form-style">
             <form action="index.php" id="search">
-                    <input type="text" name="dogid" value="<?php echo $dogid; ?>"  id="searchbox" autocomplete="off">
-                    <div id="autocomplete"></div><input type="submit" value="Szukaj">
+                    <input type="text" name="dogid" value="<?php echo $dogid; ?>">
+                    <input type="submit" value="Szukaj">
             </form>
         </div>
         <?php
@@ -86,6 +86,5 @@ function findLostDog($dogid) {
         <hr />
         
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="autocomplete.js"></script>
         
 <?php include "footer.php" ?>    
