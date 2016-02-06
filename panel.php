@@ -15,8 +15,7 @@ if (empty($_SESSION['user'])) {
 
 ?>
 
-<?php include "header.php" ?> 
-        Hello DogIdentity WOW<br />
+<?php include "header.php" ?>
         <?php echo 'Witaj użytkowniku ' . $_SESSION['user']; ?> <br />
         <form method="POST">
             <input type="submit" name="logout" value="Wyloguj">

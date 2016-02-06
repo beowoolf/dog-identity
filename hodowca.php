@@ -29,7 +29,8 @@ if (empty($_SESSION['user'])) {
                 echo 'Nazwisko: ' . $nazwisko . '<br>';
                 echo 'Telefon: ' . $telefon . '<br>';
                 echo 'Adres: ' . $adres . '<br>';
-                echo "<a href=\"nowy_hodowca.php?id=$id\">edytuj</a>";
+                echo "<a href=\"nowy_hodowca.php?id=$id\">edytuj</a> \ ";
+                echo "<a href=\"usun_hodowca.php?id=$id\">usuń</a>";
                 echo '<hr>';
                 showTableHodowla("WHERE HODOWLA.H_ID = " . $id);
             } else {

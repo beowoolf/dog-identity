@@ -29,7 +29,8 @@ if (empty($_SESSION['user'])) {
         echo 'Tatuaż: ' . $tatuaz . '<br>';
         echo 'Adres: ' . $adres . '<br>';
         echo 'Telefon: ' . $telefon . '<br>';
-        echo "<a href=\"nowy_oddzial.php?id=$id\">edytuj</a>";
+        echo "<a href=\"nowy_oddzial.php?id=$id\">edytuj</a> \ ";
+        echo "<a href=\"usun_oddzial.php?id=$id\">usuń</a>";
         echo '<hr>';
         showTableHodowla("WHERE ODDZIAL.ID = " . $id);
     } else {

@@ -29,7 +29,8 @@ if (empty($_SESSION['user'])) {
                 echo 'Nazwa: ' . $nazwa . '<br>';
                 echo 'Oddział: ' . $o_id . '<br>';
                 echo 'Hodowca: ' . foreignKeyLink('hodowca', $h_id, $hodowcaNazwisko) . '<br>';
-                echo "<a href=\"nowa_hodowla.php?id=$id\">edytuj</a>";
+                echo "<a href=\"nowa_hodowla.php?id=$id\">edytuj</a> \ ";
+                echo "<a href=\"usun_hodowla.php?id=$id\">usuń</a>";
                 echo '<hr>';
                 showTableMiot("WHERE MIOT.H_ID = " . $id);
             } else {

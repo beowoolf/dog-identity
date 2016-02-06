@@ -29,6 +29,7 @@ if (empty($_SESSION['user'])) {
                 echo 'ID: ' . $id . '<br>';
                 echo 'Nazwa: ' . $nazwa . '<br>';
                 echo 'FCI: ' . $fciNazwa . '<br>';
+                echo "<a href=\"usun_rasa.php?id=$id\">usuń</a>";
                 echo '<hr>';
                 showTablePies("WHERE PIES.R_ID = " . $id);
             } else {

@@ -13,7 +13,7 @@ if (empty($_SESSION['user'])) {
   
     <?php
     
-        echo("Czy na pewno chcesz usunąć następujące elementy?");
+        echo("Czy na pewno chcesz usunąć następujący wpis?");
         echo("<ul>");
         
             $mysql = dbConnect();
