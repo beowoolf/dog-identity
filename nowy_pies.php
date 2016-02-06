@@ -95,7 +95,7 @@ if (empty($_SESSION['user'])) {
                         echo "<input type=\"hidden\" name=\"id\" value=\"$id\" />";
                     }
                 ?>
-                <label><span>&nbsp;</span><input type="submit" value="Dodaj"></label>                                   
+                <label><span>&nbsp;</span><input type="submit" value="Zapisz"></label>                                   
             </form>
         </div>
 <?php include "footer.php" ?> 

@@ -13,25 +13,25 @@ if (empty($_SESSION['user'])) {
     $mysql = dbConnect();
     $stmt = $mysql->prepare("SELECT HODOWLA.ID, HODOWLA.NAZWA "
             . "FROM HODOWLA");
-    $stmt->bind_result($id, $breeding_name);
+    $stmt->bind_result($idHodowli, $breeding_name);
     if (!$stmt) {
         die();
     }
     $stmt->execute();
     if(isset($_GET["id"])) {
-        echo "<H1>Edycja hodowcy:</H1><br>";
-        $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_STRING);
-        $mysql = dbConnect();        
-        $stmt = $mysql->prepare("SELECT MIOT.URODZONY, MIOT.ZAKOWANY, MIOT.POZYCJA, MIOT.H_ID "
+        echo "<H1>Edycja miotu:</H1><br>";
+        $idMiotu = filter_input(INPUT_GET, "id", FILTER_SANITIZE_STRING);
+        $mysql2 = dbConnect();        
+        $stmt2 = $mysql2->prepare("SELECT MIOT.URODZONY, MIOT.ZNAKOWANY, MIOT.POZYCJA, MIOT.H_ID "
                 . "FROM MIOT "
                 . "WHERE MIOT.ID=(?)");
-        $stmt->bind_param("i", $id);
-        $stmt->bind_result($birthDate, $markupDate, $markupPosition, $breeding);
-        if (!$stmt) {
+        $stmt2->bind_param("i", $idMiotu);
+        $stmt2->bind_result($birthDate, $markupDate, $markupPosition, $breeding);
+        if (!$stmt2) {
             die();
         }
-        $stmt->execute();
-        $stmt->fetch();
+        $stmt2->execute();
+        $stmt2->fetch();
         
     } else {
         $birthDate = "";
@@ -67,7 +67,7 @@ if (empty($_SESSION['user'])) {
                 <label for="breeding"><span>Hodowla:</span> 
                     <select name="breeding"> 
                         <?php while ($stmt->fetch()) {
-                            echo "<option value=\"$id\"";
+                            echo "<option value=\"$idHodowli\"";
                             if ($breeding_name == $breeding) {
                                 echo "selected=\"selected\"";
                             }
@@ -78,10 +78,10 @@ if (empty($_SESSION['user'])) {
                 </label><br />
                 <?php
                     if (isset($_GET["id"])) {
-                        echo "<input type=\"hidden\" name=\"id\" value=\"$id\" />";
+                        echo "<input type=\"hidden\" name=\"id\" value=\"$idMiotu\" />";
                     }
                 ?>
-                <label><span>&nbsp;</span><input type="submit" value="Dodaj"></label>                                   
+                <label><span>&nbsp;</span><input type="submit" value="Zapisz"></label>                                   
             </form>
         </div>
         

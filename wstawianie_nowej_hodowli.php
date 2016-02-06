@@ -39,7 +39,7 @@ if (empty($_SESSION['user'])) {
         echo '<p> Hodowla została dodana </p>';
     }
 ?>         
-        <a href="mioty.php">Powrót do listy hodowli</a>
+        <a href="hodowle.php">Powrót do listy hodowli</a>
         <script>
             setTimeout(function () {
                 window.location.href= 'hodowle.php'; // the redirect goes here
