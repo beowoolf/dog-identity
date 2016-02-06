@@ -21,6 +21,7 @@ if (empty($_SESSION['user'])) {
             }
             $stmt->execute();
             echo 'Rasy:<br>';
+            echo '<a href="nowa_rasa.php">Dodaj nową rasę</a>';
             echo '<table class="data">';
             echo '<tr class="tableheader">';
             echo '<th>ID</th>';
@@ -32,7 +33,7 @@ if (empty($_SESSION['user'])) {
                 echo "<tr>";
                 echo "<td>" . primaryKeyLink('rasa', $id) . "</td>";
                 echo "<td>" . $nazwa . "</td>";
-                echo '<td>' . $fciNazwa . '</td>';
+                echo '<td>' . $fci_id . ': ' . $fciNazwa . '</td>';
                 echo "</tr>\n";
             }
             echo "</table>\n";

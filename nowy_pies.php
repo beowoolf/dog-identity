@@ -87,7 +87,7 @@ if (empty($_SESSION['user'])) {
                 <label for="gender"><span>Płeć:</span>
                     <select name="gender">                       
                         <option value="0">Pies</option>
-                        <option value="1">Suka</option>                       
+                        <option value="1" <?php if ($gender) echo 'selected="selected"';?>>Suka</option>                       
                     </select>
                 </label><br />
                 <?php

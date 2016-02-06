@@ -68,7 +68,7 @@ if (empty($_SESSION['user'])) {
                     <select name="breeding"> 
                         <?php while ($stmt->fetch()) {
                             echo "<option value=\"$idHodowli\"";
-                            if ($breeding_name == $breeding) {
+                            if ($idHodowli == $breeding) {
                                 echo "selected=\"selected\"";
                             }
                             echo ">$breeding_name</option>";
