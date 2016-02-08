@@ -26,6 +26,7 @@
                         echo "<li><a href=\"oddzialy.php\">Oddziały</a></li>";
                         echo "<li><a href=\"rasy.php\">Rasy</a></li>";
                         echo "<li><a href=\"psy.php\">Psy</a></li>";
+                        echo "<li><a href=\"uzytkownicy.php\">Użytkownicy</a></li>";
                         echo "<li><a href=\"logout.php\">Wyloguj</a></li>";
                         
                     }
