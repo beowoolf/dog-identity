@@ -52,6 +52,7 @@ function findLostDog($dogid) {
             "adres" => $adres,
             "telefon" => $telefon];
 }
+session_start();
 
 ?>
 <?php include "header.php" ?>  
@@ -84,7 +85,5 @@ function findLostDog($dogid) {
             }
         ?>
         <hr />
-        
-        <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
         
 <?php include "footer.php" ?>    
